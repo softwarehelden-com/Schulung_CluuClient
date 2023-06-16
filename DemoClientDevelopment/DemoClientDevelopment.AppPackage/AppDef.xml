@@ -1,0 +1,56 @@
+﻿<App xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://schema.softwarehelden.com/xml/AppDefSchema-v3.xsd">
+
+  <Name>DemoClientDevelopment</Name>
+
+  <!-- App-Store Metadata -->
+  <Caption>DemoClientDevelopment</Caption>
+  <ShortDescription></ShortDescription>
+  <Manufacturer></Manufacturer>
+  <ManufacturerUrl></ManufacturerUrl>
+  <VersionUrl></VersionUrl>
+  <ProductUrl></ProductUrl>
+  <Category></Category>
+  <CluuFrameworkVersionRange>[6.0.0, )</CluuFrameworkVersionRange>
+  <Contact>
+    <Name></Name>
+    <MailAddress></MailAddress>
+  </Contact>
+
+  <PostDeploymentActions>
+    <!--<Action name="" triggerAppModels="" /> -->
+  </PostDeploymentActions>
+
+  <AddIn type="Web">
+    <Development>
+      <CopyTo>C:\Cluu\Install\Cluu_Framework_Dev_6.0\Frontend\AddIns</CopyTo>
+    </Development>
+    <Directory path="..\DemoClientDevelopment.Web.UI\bin\$(Configuration)\netstandard2.0\">
+      <File path="DemoClientDevelopment.Web.UI.dll" containsStartup="true" />
+      <File path="DemoClientDevelopment.Web.UI.pdb" isDebug="true" />
+    </Directory>
+  </AddIn>
+
+  <AddIn type="Backbone">
+    <Development>
+      <CopyTo>C:\Cluu\Install\Cluu_Framework_Dev_6.0\Backbone\AddIns</CopyTo>
+    </Development>
+    <Directory path="..\DemoClientDevelopment.Actions\bin\$(Configuration)\netstandard2.0\">
+      <File path="DemoClientDevelopment.Actions.dll" containsStartup="true" />
+      <File path="DemoClientDevelopment.Actions.pdb" isDebug="true" />
+      <File path="DemoClientDevelopment.dll" />
+      <File path="DemoClientDevelopment.pdb" isDebug="true" />
+    </Directory>
+  </AddIn>
+
+  <AddIn type="Metadata">
+    <Directory path="..\DemoClientDevelopment.Metadata\bin\$(Configuration)\netstandard2.0\">
+      <File path="DemoClientDevelopment.Metadata.zip" />
+    </Directory>
+  </AddIn>
+
+  <AddIn type="Database">
+    <Directory path="..\DemoClientDevelopment.Database\bin\$(Configuration)\">
+      <File path="DemoClientDevelopment.Database.dacpac" />
+    </Directory>
+  </AddIn>
+</App>

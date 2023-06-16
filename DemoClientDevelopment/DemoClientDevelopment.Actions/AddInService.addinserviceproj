@@ -1,0 +1,9 @@
+﻿{
+  "$schema": "http://schema.softwarehelden.com/json/cluu-backend-addin-service-schema-v1.json",
+  "namespace": "DemoClientDevelopment.Actions",
+  "jsonMetadataPath": "..\\DemoClientDevelopment.Metadata",
+  "outputFilePath": "AddInService.cs",
+  "generateActions": true,
+  "actionsOutputDirectory": "Actions",
+  "actionSettings": {}
+}

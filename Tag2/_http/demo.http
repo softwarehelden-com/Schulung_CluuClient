@@ -1,0 +1,72 @@
+# Variablen sind in der Umgebung hinterlegt
+
+###
+// @name api_login
+POST https://{{authHost}}/token HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password
+&username={{username}}
+&password={{password}}
+&client_id={{client_id}}
+&client_secret={{client_secret}}
+&scope=openid+offline_access
+&remote_scheme=CluuSecurity
+
+###
+// @name api_refresh_token
+POST https://{{authHost}}/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=refresh_token
+&refresh_token={{api_login.response.body.refresh_token}}
+&client_id={{client_id}}
+&client_secret={{client_secret}}
+
+###
+POST https://{{backboneHost}}/Query
+Authorization: Bearer {{api_login.response.body.access_token}}
+Accept: application/json; charset=utf-8
+Content-Type: text/plain; charset=utf-8
+
+FROM    SwhOrgManagement.Person
+WHERE   FirstName == "Jörg" && LastName == "Müller"
+SELECT  Id
+       ,FirstName
+       ,LastName
+       ,OrganizationUnit.Caption
+
+###
+POST https://{{backboneHost}}/Update
+Authorization: Bearer {{api_login.response.body.access_token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+Cluu-UpdateReturnType: None
+
+[
+    {
+        "type": "Update",
+        "cluuClassName": "SwhOrgManagement.Person",
+        "key": 2,
+        "values": {
+            "LastName": "Müller"
+        }
+    }
+]
+
+###
+POST https://{{backboneHost}}/Invoke/SwhOrgManagement.AddIns.DefaultAddIn.ExportPersons
+Authorization: Bearer {{api_login.response.body.access_token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "personConstraint": null,
+  "exportedFileType": 0
+}
+
+###
+POST https://{{backboneHost}}/Invoke/DemoClientDevelopment.AddIns.Demo.GetStream
+Authorization: Bearer {{api_login.response.body.access_token}}
+Accept: application/octet-stream
+

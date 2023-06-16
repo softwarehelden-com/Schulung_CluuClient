@@ -1,0 +1,27 @@
+{
+  "$schema": "http://schema.softwarehelden.com/json/cluu-cs-entities-v1.json",
+  // Name des Namespace, in dem der Code generiert wird
+  "namespace": "DemoClientDevelopment.EntityModel",
+  // 0 = Offline, 1 = Online
+  "metadataSourceType": "Offline",
+  // Sichtbarkeit des generierten Codes
+  "accessModifier": "internal",
+  // Name der generierten DataContext-Klasse
+  "dataContextClassName": "DemoClientDevelopmentContext",
+  // Pfad der Ausgabedatei
+  "outputFilePath": "DemoClientDevelopment.entities.cs",
+  // Pfad zum Metadatenverzeichnis (offline-Modus)
+  "jsonMetadataPaths": [
+    "..\\..\\DemoClientDevelopment.Metadata"
+  ],
+  "appModelSettings": [
+    {
+      "appModelName": "DemoClientDevelopment",
+      "relativeNamespace": "",
+      // Auswahl der Klassen. null == alle, [] = keine.
+      "cluuClassNames": [],
+      // Auswahl der Aktionen. null == alle, [] = keine.
+      "cluuActionNames": null
+    }
+  ]
+}

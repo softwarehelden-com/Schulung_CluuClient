@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\build.targets" />
+
+  <PropertyGroup>
+    <CopyLocalLockFileAssemblies>True</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DemoClientDevelopment\DemoClientDevelopment.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Cluu.AddIn.Abstractions" Version="$(CluuVersion)" />
+    <PackageReference Include="Cluu.AddIn.Utils" Version="$(CluuVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="AddInService.addinserviceproj" />
+  </ItemGroup>
+
+</Project>

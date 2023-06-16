@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build">
+  <Sdk Name="Microsoft.Build.Sql" Version="0.1.7-preview" />
+  <PropertyGroup>
+    <ProjectGuid>{b7b15e63-1094-47c6-96d3-dfba837822e8}</ProjectGuid>
+    <Name>DemoClientDevelopment.Database</Name>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <ModelCollation>1033, CI</ModelCollation>
+    <SqlServerVerification>False</SqlServerVerification>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <DefaultSchema>DemoClientDevelopment</DefaultSchema>
+  </PropertyGroup>
+  <ItemGroup>
+    <Build Include="**/*.sql" />
+    <None Include="**/*.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Security\" />
+    <Folder Include="Security\Schemas\" />
+    <Folder Include="PublishProfile\" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,35 @@
+{
+  "$schema": "http://schema.softwarehelden.com/json/cluu-cs-entities-v1.json",
+  "namespace": "DataAccessDemo.EntityModel",
+  "metadataSourceType": "Online",
+  "accessModifier": "internal",
+  "dataContextClassName": "DataAccessDemoContext",
+  "outputFilePath": "Entities.cs",
+  "appModelSettings": [
+    {
+      "appModelName": "DemoClientDevelopment",
+      "relativeNamespace": "DemoClientDevelopment",
+      "cluuClassNames": [],
+      "cluuActionNames": null
+    },
+    {
+      "appModelName": "SwhOrgManagement",
+      "relativeNamespace": "SwhOrgManagement",
+      "cluuClassNames": [
+        "SwhOrgManagement.Person",
+        "SwhOrgManagement.OrganizationUnit"
+      ],
+      "cluuActionNames": [
+        "SwhOrgManagement.AddIns.DefaultAddIn.ExportPersons"
+      ]
+    }
+  ],
+  "cluuClientOptions": {
+    "backboneAddress": "https://127.0.0.1:16000/Backbone"
+  },
+  "cluuClientWorkerIdentityProviderOptions": {
+    "authMethod": "Certificate",
+    "username": "demo.schulung",
+    "credential": "CN=Cluu.Backbone.Worker, OU=Cluu"
+  }
+}

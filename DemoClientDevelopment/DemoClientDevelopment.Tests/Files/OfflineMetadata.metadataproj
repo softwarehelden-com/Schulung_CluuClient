@@ -1,0 +1,20 @@
+{
+  "$schema": "http://schema.softwarehelden.com/json/metadataproj-v1.json",
+  "SourceConnectionString": [
+    "..\\..\\DemoClientDevelopment.Metadata",
+    "..\\obj\\.FrameworkMetadata\\CluuMetadata.Metadata.zip",
+    "..\\obj\\.FrameworkMetadata\\CluuSecurity.Metadata.zip",
+    "..\\obj\\.FrameworkMetadata\\CluuUI.Metadata.zip",
+    "..\\obj\\.FrameworkMetadata\\CluuRuntime.Metadata.zip",
+    "..\\obj\\.FrameworkMetadata\\Cluu.Tests.Metadata.zip"
+  ],
+  "TargetConnectionString": ".\\OfflineMetadata.zip",
+  "ComparisonMode": "JsonToJson",
+  "CompareDataAdapters": true,
+  "CompareViewFieldScope": false,
+  "AppModels": [
+    "DemoClientDevelopment"
+  ],
+  "DryRun": false,
+  "ClearTarget": true
+}

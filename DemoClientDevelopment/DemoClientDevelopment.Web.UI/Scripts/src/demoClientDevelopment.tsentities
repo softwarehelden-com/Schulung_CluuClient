@@ -1,0 +1,16 @@
+{
+  "$schema": "http://schema.softwarehelden.com/json/cluu-ts-entities-v1.json",
+  // Pfad zum Metadatenverzeichnis (offline-Modus)
+  "jsonMetadataPaths": [
+    "..\\..\\..\\DemoClientDevelopment.Metadata"
+  ],
+  "appModelSettings": [
+    {
+      "appModelName": "DemoClientDevelopment",
+      // Auswahl der Klassen. null == alle, [] = keine.
+      "cluuClassNames": [],
+      // Auswahl der Aktionen. null == alle, [] = keine.
+      "cluuActionNames": []
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- Standard ist bereits 'false' -->
+    <CluuPackWebUITypings>false</CluuPackWebUITypings>
+  </PropertyGroup>
+
+  <Import Project="..\build.targets" />
+
+  <ItemGroup>
+    <PackageReference Include="Cluu.AddIn.Abstractions" Version="$(CluuVersion)" />
+    <PackageReference Include="Cluu.AddIn.Web" Version="$(CluuVersion)" />
+    <PackageReference Include="Cluu.Build.WebPackage" Version="$(CluuVersion)">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Cluu.UI.FieldRenderers" Version="$(CluuVersion)" />
+    <PackageReference Include="Cluu.Web.UI.TypeScript.Typings" Version="$(CluuVersion)">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.3.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <!--<ItemGroup>
+    <Compile Include="..\DemoClientDevelopment\EntityModel\DemoClientDevelopment.entities.cs">
+      <Link>Shared\DemoClientDevelopment.entities.cs</Link>
+    </Compile>
+  </ItemGroup>-->
+
+</Project>

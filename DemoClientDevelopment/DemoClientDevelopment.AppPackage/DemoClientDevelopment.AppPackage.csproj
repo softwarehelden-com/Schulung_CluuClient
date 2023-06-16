@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="..\build.targets" />
+	<ItemGroup>
+		<PackageReference Include="Cluu.Build.AppPackage" Version="$(CluuVersion)">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+	
+	<PropertyGroup>
+		<CluuActionsProjectPath>..\DemoClientDevelopment.Actions\DemoClientDevelopment.Actions.csproj</CluuActionsProjectPath>
+		<CluuMetadataProjectPath>..\DemoClientDevelopment.Metadata\DemoClientDevelopment.Metadata.csproj</CluuMetadataProjectPath>
+		<CluuDatabaseProjectPath>..\DemoClientDevelopment.Database\DemoClientDevelopment.Database.sqlproj</CluuDatabaseProjectPath>
+		<CluuWebUIProjectPath>..\DemoClientDevelopment.Web.UI\DemoClientDevelopment.Web.UI.csproj</CluuWebUIProjectPath>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<ProjectReference Condition="Exists('$(CluuActionsProjectPath)')" Include="$(CluuActionsProjectPath)">
+			<ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+			<SkipGetTargetFrameworkProperties>true</SkipGetTargetFrameworkProperties>
+			<PrivateAssets>all</PrivateAssets>
+		</ProjectReference>
+		<ProjectReference Condition="Exists('$(CluuMetadataProjectPath)')" Include="$(CluuMetadataProjectPath)">
+			<ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+			<SkipGetTargetFrameworkProperties>true</SkipGetTargetFrameworkProperties>
+			<PrivateAssets>all</PrivateAssets>
+		</ProjectReference>
+		<ProjectReference Condition="Exists('$(CluuDatabaseProjectPath)')" Include="$(CluuDatabaseProjectPath)">
+			<ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+			<SkipGetTargetFrameworkProperties>true</SkipGetTargetFrameworkProperties>
+			<PrivateAssets>all</PrivateAssets>
+		</ProjectReference>
+		<ProjectReference Condition="Exists('$(CluuWebUIProjectPath)')" Include="$(CluuWebUIProjectPath)">
+			<ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+			<SkipGetTargetFrameworkProperties>true</SkipGetTargetFrameworkProperties>
+			<PrivateAssets>all</PrivateAssets>
+		</ProjectReference>
+	</ItemGroup> 
+</Project>

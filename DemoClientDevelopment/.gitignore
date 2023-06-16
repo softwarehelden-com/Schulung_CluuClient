@@ -1,0 +1,28 @@
+﻿# Root directories
+/_pub
+/_setup
+/packages
+/TestResults
+/.vs
+
+# Common directories
+obj
+bin
+
+# Root files
+/GitVersion.yml
+
+# Common files
+*.jfm
+*.js
+*.js.map
+*.d.ts
+*.user
+*.vspscc
+*.dbmdl
+!webpack.config.js
+
+# Project specific files
+!$webProjectName$/Scripts/test/lib/cluu.init.js
+**/Files/OfflineMetadata.zip
+tsconfig.tsbuildinfo

@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <Import Project="..\build.targets" />
+
+  <ItemGroup>
+    <ProjectReference Include="..\DemoClientDevelopment.Actions\DemoClientDevelopment.Actions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Cluu.TestFramework" Version="$(CluuVersion)" />
+    <PackageReference Include="Cluu.TestFramework.Metadata" Version="$(CluuVersion)" />
+    <!-- 'Microsoft.NET.Test.Sdk' ist notwendig bei net6.0 -->
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
+    <PackageReference Include="Moq" Version="4.16.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

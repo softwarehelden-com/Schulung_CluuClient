@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="..\build.targets" />
+
+    <!-- NuGet-Referenzen -->
+    <ItemGroup>
+      <PackageReference Include="Cluu.Client" Version="$(CluuVersion)" />
+    </ItemGroup>
+
+    <!-- Include von Translations über EmbeddedResource -->
+    <!-- <ItemGroup>
+      <None Remove="Globalization\*.translations.json" />
+      <EmbeddedResource Include="Globalization\*.translations.json" />
+    </ItemGroup> -->
+
+</Project>

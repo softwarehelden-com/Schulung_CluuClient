@@ -1,0 +1,25 @@
+// Declare as Content-File in Visual Studio to enable tsc with tsconfig.json
+{
+  "$schema": "http://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "module": "amd",
+    "declaration": true,
+    "sourceMap": true,
+    "target": "ES2019",
+    "importHelpers": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "allowUnreachableCode": false,
+    "baseUrl": "",
+    "paths": {
+      "*": [ "*", "typings/imported/*" ]
+    },
+    "noImplicitOverride": true,
+    "incremental": true,
+    "outDir": "./dist",
+    "rootDir": "./",
+
+    // TS 2.3 (Kompatibilität)
+    "skipLibCheck": true
+  }
+}

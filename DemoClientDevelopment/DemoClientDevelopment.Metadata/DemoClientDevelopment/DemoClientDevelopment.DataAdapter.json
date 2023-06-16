@@ -1,0 +1,11 @@
+﻿{
+  "DataAdapter": {
+    "Id": "ae36ddab-1227-4909-979a-0956861dba5c",
+    "Name": "DemoClientDevelopmentAdapter",
+    "Caption": "DemoClientDevelopmentAdapter",
+    "Type": {
+      "Id": "f53f98ef-9c0c-4b0a-8f4e-b9f600bc8149",
+      "Name": "Cluu.Backbone.DataAdapter.LiteDB.LiteDBDataAdapter, Cluu.Backbone.DataAdapter.LiteDB"
+    }
+  }
+}

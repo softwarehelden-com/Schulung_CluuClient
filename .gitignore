@@ -1,0 +1,12 @@
+﻿/packages
+.vs
+obj
+bin
+GitVersion.yml
+*.jfm
+*.js
+*.js.map
+*.d.ts
+*.user
+*.vspscc
+*.dbmdl

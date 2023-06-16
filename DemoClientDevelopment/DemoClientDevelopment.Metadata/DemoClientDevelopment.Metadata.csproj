@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- Standard ist bereits 'false' -->
+    <CluuPackDevMetadata>false</CluuPackDevMetadata>
+  </PropertyGroup>
+
+  <Import Project="..\build.targets" />
+
+  <ItemGroup>
+    <PackageReference Include="Cluu.Build.MetadataPackage" Version="$(CluuVersion)">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DemoClientDevelopment\" />
+  </ItemGroup>
+
+</Project>

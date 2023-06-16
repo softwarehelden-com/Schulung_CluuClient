@@ -1,0 +1,9 @@
+﻿{
+  "Id": "beaadf8c-22d6-470c-b990-f89b576f3169",
+  "Name": "DemoClientDevelopment.AddIns.Demo.GetStream",
+  "Caption": "DemoClientDevelopment.AddIns.Demo.GetStream",
+  "Type": 0,
+  "CheckSecurity": true,
+  "RequestType": 0,
+  "ResponseType": 2
+}
