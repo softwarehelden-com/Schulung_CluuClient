@@ -1,5 +1,10 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using System.Reflection;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+
+Environment.CurrentDirectory = Path.GetDirectoryName(
+    new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath
+);
 
 using var host = Host.CreateDefaultBuilder(args)
     .ConfigureAppConfiguration(builder =>
@@ -13,7 +18,7 @@ using var host = Host.CreateDefaultBuilder(args)
     .ConfigureServices(services =>
     {
         // DependencyInjection-Container konfigurieren
-        //_ = services.AddHostedService<MyBackgroundService>();
+        _ = services.AddHostedService<MyBackgroundService>();
         _ = services.AddHostedService<MyBackgroundServiceWithHostApplicationLifetime>();
     })
     // Aus NuGet-Paket "Microsoft.Extensions.Hosting.WindowsServices"
