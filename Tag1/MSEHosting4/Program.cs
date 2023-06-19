@@ -13,6 +13,10 @@ using var host = Host.CreateDefaultBuilder(args)
     .ConfigureServices(services =>
     {
         // DependencyInjection-Container konfigurieren
+        //_ = services
+        //    .AddSingleton<MessageWriter>()
+        //    .AddSingleton<IMessageWriter>(x => x.GetRequiredService<MessageWriter>())
+        //    .AddSingleton<IAsyncMessageWriter>(x => x.GetRequiredService<MessageWriter>());
         _ = services.AddSingleton<IMessageWriter, MessageWriter>();
         //services.TryAddSingleton<IMessageWriter, MessageWriter>();
 

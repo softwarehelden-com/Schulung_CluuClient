@@ -1,7 +1,14 @@
-﻿public class MessageWriter : IMessageWriter
+﻿public class MessageWriter : IMessageWriter, IAsyncMessageWriter
 {
-    public void Write(string message)
+    void IMessageWriter.Write(string message)
     {
         Console.WriteLine($"MessageWriter.Write(message: \"{message}\")");
+    }
+
+    async Task IAsyncMessageWriter.WriteAsync(string message)
+    {
+        await Console.Out.WriteLineAsync(
+            $"MessageWriter.Write(message: \"{message}\")"
+        ).ConfigureAwait(false);
     }
 }
