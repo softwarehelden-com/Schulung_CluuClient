@@ -19,7 +19,6 @@ internal static class Program
     {
         using var host = Host.CreateDefaultBuilder()
             .ConfigureServices(ConfigureServices)
-            .UseConsoleLifetime()
             .Build();
 
         await host.StartAsync().ConfigureAwait(false);
@@ -43,19 +42,10 @@ internal static class Program
     private static void ConfigureServices(HostBuilderContext context, IServiceCollection services)
     {
         // Forms
-        _ = services
-            .AddForm<MainForm>()
-            .AddForm<LoginForm>();
+        _ = services.AddAllAppForms();
 
         // Services
-        _ = services
-            .AddSingleton<IWinFormsMiddleware, WinFormsMiddleware>()
-
-            .AddSingleton<IWinFormsIdentityProvider, WinFormsIdentityProvider>()
-
-            .AddSingleton<ISingleSignOnLoginService, SingleSignOnLoginService>()
-            .AddSingleton<ICluuSecurityLoginService, CluuSecurityLoginService>()
-            .AddSingleton<IQueryPersonService, QueryPersonService>();
+        _ = services.AddAllAppServices();
 
         // Cluu
         _ = services.AddCluuClient(cluu =>

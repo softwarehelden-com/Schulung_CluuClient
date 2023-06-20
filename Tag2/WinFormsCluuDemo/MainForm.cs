@@ -1,4 +1,5 @@
 using Cluu.Backbone;
+using WinFormsCluuDemo.Hosting;
 using WinFormsCluuDemo.Services.Middleware;
 using WinFormsCluuDemo.Services.Query;
 
