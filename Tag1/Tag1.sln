@@ -31,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hosting - Configuration", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hosting - Logging", "Hosting - Logging", "{A028C5F8-614F-4167-B731-BDD60C7F3B3D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleSolutionTag1", "SampleSolutionTag1\SampleSolutionTag1.csproj", "{EBAF5946-5DC1-4AF3-8D6D-FD60349134A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{DF5CFC12-6996-4B6B-A38F-6276F712384F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF5CFC12-6996-4B6B-A38F-6276F712384F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF5CFC12-6996-4B6B-A38F-6276F712384F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBAF5946-5DC1-4AF3-8D6D-FD60349134A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBAF5946-5DC1-4AF3-8D6D-FD60349134A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBAF5946-5DC1-4AF3-8D6D-FD60349134A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBAF5946-5DC1-4AF3-8D6D-FD60349134A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
