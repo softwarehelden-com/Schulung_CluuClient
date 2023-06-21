@@ -5,7 +5,11 @@ VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsCluuDemo", "WinFormsCluuDemo\WinFormsCluuDemo.csproj", "{D55F83CC-B8E7-401C-99FB-6FF0A3E3E02A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAndServiceDemo", "ConsoleAndServiceDemo\ConsoleAndServiceDemo.csproj", "{A8489978-B461-4DF4-9C28-A9B653D7E539}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAndServiceDemo", "ConsoleAndServiceDemo\ConsoleAndServiceDemo.csproj", "{A8489978-B461-4DF4-9C28-A9B653D7E539}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Musterlösung", "Musterlösung", "{6605A399-C69D-4BBE-A18B-F37B5F1E4BB7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleSolution1", "SampleSolution1\SampleSolution1.csproj", "{C0BF8A91-85FB-4594-9ABA-4E87AE0D425B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +25,16 @@ Global
 		{A8489978-B461-4DF4-9C28-A9B653D7E539}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8489978-B461-4DF4-9C28-A9B653D7E539}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8489978-B461-4DF4-9C28-A9B653D7E539}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0BF8A91-85FB-4594-9ABA-4E87AE0D425B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0BF8A91-85FB-4594-9ABA-4E87AE0D425B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0BF8A91-85FB-4594-9ABA-4E87AE0D425B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0BF8A91-85FB-4594-9ABA-4E87AE0D425B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C0BF8A91-85FB-4594-9ABA-4E87AE0D425B} = {6605A399-C69D-4BBE-A18B-F37B5F1E4BB7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2E3972F9-B553-4F64-BB8C-0F554D643F36}
