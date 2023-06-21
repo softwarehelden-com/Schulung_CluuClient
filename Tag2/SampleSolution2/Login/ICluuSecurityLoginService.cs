@@ -1,4 +1,7 @@
-﻿namespace SampleSolutionWinForms.Services.Login;
+﻿using System.Threading;
+using System.Threading.Tasks;
+
+namespace SampleSolutionWpf.Login;
 
 public interface ICluuSecurityLoginService
 {

@@ -1,10 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using SampleSolution1.Identity;
-using SampleSolution1.Middleware;
-using SampleSolution1.Services.Login;
-using SampleSolution1.Services.Query;
+using SampleSolutionWinForms.Identity;
+using SampleSolutionWinForms.Middleware;
+using SampleSolutionWinForms.Services.Login;
+using SampleSolutionWinForms.Services.Query;
 
-namespace SampleSolution1.Hosting;
+namespace SampleSolutionWinForms.Hosting;
 
 internal static class IServiceCollectionServiceExtension
 {

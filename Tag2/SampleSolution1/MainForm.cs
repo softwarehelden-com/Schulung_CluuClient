@@ -1,8 +1,8 @@
-using SampleSolution1.Hosting;
-using SampleSolution1.Middleware;
-using SampleSolution1.Services.Query;
+using SampleSolutionWinForms.Hosting;
+using SampleSolutionWinForms.Middleware;
+using SampleSolutionWinForms.Services.Query;
 
-namespace SampleSolution1;
+namespace SampleSolutionWinForms;
 
 public partial class MainForm : Form
 {

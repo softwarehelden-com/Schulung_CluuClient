@@ -1,4 +1,4 @@
-﻿namespace SampleSolution1
+﻿namespace SampleSolutionWinForms
 {
     partial class MainForm
     {

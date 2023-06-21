@@ -1,9 +1,9 @@
 using Cluu.Client;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using SampleSolution1.Hosting;
+using SampleSolutionWinForms.Hosting;
 
-namespace SampleSolution1;
+namespace SampleSolutionWinForms;
 
 internal static class Program
 {

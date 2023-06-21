@@ -1,6 +1,6 @@
 ﻿using Cluu;
 
-namespace SampleSolution1.Identity;
+namespace SampleSolutionWinForms.Identity;
 
 internal interface IWinFormsIdentityProvider
 {

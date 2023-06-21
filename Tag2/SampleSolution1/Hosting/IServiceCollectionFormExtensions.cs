@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using SampleSolution1;
 
-namespace SampleSolution1.Hosting;
+namespace SampleSolutionWinForms.Hosting;
 
 public delegate T FormFactory<T>() where T : Form;
 

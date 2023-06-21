@@ -1,7 +1,7 @@
 ﻿using Cluu.Security.Authentication;
-using SampleSolution1.Identity;
+using SampleSolutionWinForms.Identity;
 
-namespace SampleSolution1.Services.Login;
+namespace SampleSolutionWinForms.Services.Login;
 
 internal class CluuSecurityLoginService : ICluuSecurityLoginService
 {

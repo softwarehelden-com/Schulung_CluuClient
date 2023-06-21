@@ -1,4 +1,4 @@
-﻿namespace SampleSolution1.Services.Query;
+﻿namespace SampleSolutionWinForms.Services.Query;
 
 public interface IQueryService
 {

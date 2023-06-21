@@ -1,8 +1,8 @@
 ﻿using Cluu;
 using Cluu.Threading;
-using SampleSolution1.Hosting;
+using SampleSolutionWinForms.Hosting;
 
-namespace SampleSolution1.Identity;
+namespace SampleSolutionWinForms.Identity;
 
 internal class WinFormsIdentityProvider : IWinFormsIdentityProvider
 {

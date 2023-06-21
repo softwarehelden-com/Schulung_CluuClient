@@ -1,4 +1,4 @@
-﻿namespace SampleSolution1.Middleware;
+﻿namespace SampleSolutionWinForms.Middleware;
 
 public interface IWinFormsMiddleware
 {

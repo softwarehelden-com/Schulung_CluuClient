@@ -1,6 +1,6 @@
-﻿using SampleSolution1.Services.Login;
+﻿using SampleSolutionWinForms.Services.Login;
 
-namespace SampleSolution1;
+namespace SampleSolutionWinForms;
 
 public partial class LoginForm : Form
 {

@@ -1,0 +1,51 @@
+﻿<Window x:Class="SampleSolutionWpf.Login.CluuLoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SampleSolutionWpf.Login"
+        mc:Ignorable="d"
+        Title="Login"
+        Height="450"
+        Width="400"
+        ResizeMode="NoResize">
+    <StackPanel>
+        <TextBlock Text="Willkommen bei Cluu"
+                   FontWeight="Bold"
+                   FontSize="18"
+                   Width="250"
+                   Margin="15"
+                   TextAlignment="Center"/>
+        <TextBlock Name="descriptionTextBlock"
+                   Text="{Binding Path=DescriptionText}"
+                   Width="250"
+                   Margin="15"
+                   TextWrapping="Wrap"
+                   TextAlignment="Center"/>
+        <ComboBox Name="authMethodSelector"
+                  Width="250"
+                  Height="35"
+                  Margin="15"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  HorizontalContentAlignment="Center"
+                  VerticalContentAlignment="Center"
+                  DisplayMemberPath="Caption"
+                  SelectedValuePath="AuthMethod"/>
+        <TextBox Name="userNameInput"
+                 Width="250"
+                 Height="35"
+                 Margin="15"
+                 Visibility="{Binding Path=PasswordBoxVisibility}"/>
+        <PasswordBox Name="credentialsInput"
+                     Width="250"
+                     Height="35"
+                     Margin="15"
+                     Visibility="{Binding Path=UserNameTextBoxVisibility}"/>
+        <Button Name="loginButton"
+                Width="150"
+                Margin="15"
+                Height="40"
+                >Anmelden</Button>
+    </StackPanel>
+</Window>

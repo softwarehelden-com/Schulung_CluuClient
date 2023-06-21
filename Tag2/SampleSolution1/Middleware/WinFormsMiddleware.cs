@@ -1,8 +1,8 @@
 ﻿using Cluu;
 using Cluu.Hosting;
-using SampleSolution1.Identity;
+using SampleSolutionWinForms.Identity;
 
-namespace SampleSolution1.Middleware;
+namespace SampleSolutionWinForms.Middleware;
 
 internal class WinFormsMiddleware : IWinFormsMiddleware
 {
