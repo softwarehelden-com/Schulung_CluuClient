@@ -22,6 +22,14 @@
       "cluuActionNames": [
         "SwhOrgManagement.AddIns.DefaultAddIn.ExportPersons"
       ]
+    },
+    {
+      "appModelName": "CluuSecurity",
+      "relativeNamespace": "CluuSecurity",
+      "cluuClassNames": [
+        "CluuSecurity.Login"
+      ],
+      "cluuActionNames": []
     }
   ],
   "cluuClientOptions": {
