@@ -9,24 +9,29 @@ using var bootstrapLogger = new LoggerConfiguration()
     .WriteTo.EventLog("MyApp", logName: "Application")
     .CreateLogger();
 
-bootstrapLogger.Fatal("Es ist was echt Schlimmes passiert");
+try
+{
+    using var host = Host.CreateDefaultBuilder(args)
+        .ConfigureLogging(builder =>
+        {
+            // Standardlogging entfernen. Nur Serilog verwenden.
+            _ = builder.ClearProviders();
+        })
+        .UseSerilog((context, configuration) =>
+        {
+            // Konfiguration aus dem Abschnitt "Serilog" lesen
+            _ = configuration.ReadFrom.Configuration(context.Configuration);
+        })
+        .UseConsoleLifetime()
+        .Build();
 
-using var host = Host.CreateDefaultBuilder(args)
-    .ConfigureLogging(builder =>
-    {
-        // Standardlogging entfernen. Nur Serilog verwenden.
-        _ = builder.ClearProviders();
-    })
-    .UseSerilog((context, configuration) =>
-    {
-        // Konfiguration aus dem Abschnitt "Serilog" lesen
-        _ = configuration.ReadFrom.Configuration(context.Configuration);
-    })
-    .UseConsoleLifetime()
-    .Build();
+    host.Services
+        .GetRequiredService<ILogger<Program>>()
+        .LogInformation("Zeitstempel {timestamp}", DateTime.Now);
 
-host.Services
-    .GetRequiredService<ILogger<Program>>()
-    .LogInformation("Zeitstempel {timestamp}", DateTime.Now);
-
-await host.RunAsync();
+    await host.RunAsync();
+}
+catch (Exception exception)
+{
+    bootstrapLogger.Fatal(exception, "Es ist was echt Schlimmes mit der Anwendung passiert");
+}
