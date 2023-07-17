@@ -33,6 +33,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hosting - Logging", "Hostin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleSolutionTag1", "SampleSolutionTag1\SampleSolutionTag1.csproj", "{EBAF5946-5DC1-4AF3-8D6D-FD60349134A1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Startaufgabe", "Startaufgabe", "{BD42EC67-9604-40F4-A56E-572CD2D58DD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxWebRequest", "MaxWebRequest\MaxWebRequest.csproj", "{0D6AB121-8159-4BEE-9EC4-EBA21BDD1B33}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +83,10 @@ Global
 		{EBAF5946-5DC1-4AF3-8D6D-FD60349134A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBAF5946-5DC1-4AF3-8D6D-FD60349134A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBAF5946-5DC1-4AF3-8D6D-FD60349134A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D6AB121-8159-4BEE-9EC4-EBA21BDD1B33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D6AB121-8159-4BEE-9EC4-EBA21BDD1B33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D6AB121-8159-4BEE-9EC4-EBA21BDD1B33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D6AB121-8159-4BEE-9EC4-EBA21BDD1B33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,6 +97,7 @@ Global
 		{B0E3E53F-A377-4C2F-8BEA-65E380E97CA0} = {9B6429E9-5F70-475D-94D1-A391E0811E61}
 		{E2660423-EE13-4667-87E4-37D1D6D94672} = {54DBC9D6-A8AE-457C-B402-468A6F1E2C02}
 		{C9A324F6-F50B-4FCF-BA85-1AE5A5087D27} = {A028C5F8-614F-4167-B731-BDD60C7F3B3D}
+		{0D6AB121-8159-4BEE-9EC4-EBA21BDD1B33} = {BD42EC67-9604-40F4-A56E-572CD2D58DD6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AC51D972-423D-4076-BD92-3DFABDE2E4FD}
