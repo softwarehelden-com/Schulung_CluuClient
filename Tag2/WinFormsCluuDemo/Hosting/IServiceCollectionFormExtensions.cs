@@ -2,21 +2,29 @@
 
 namespace WinFormsCluuDemo.Hosting;
 
-public delegate T FormFactory<T>() where T : Form;
-
 internal static class IServiceCollectionFormExtensions
 {
     public static IServiceCollection AddAllAppForms(this IServiceCollection services)
     {
-        return services
-            .AddForm<MainForm>()
-            .AddForm<LoginForm>();
+        services.AddSingleton(
+            typeof(IFormFactory<>), typeof(FormFactory<>)
+        );
+
+        return services;
     }
 
-    private static IServiceCollection AddForm<T>(this IServiceCollection services) where T : Form
+    private class FormFactory<T> : IFormFactory<T> where T : Form
     {
-        return services
-            .AddTransient<T>()
-            .AddSingleton<FormFactory<T>>(x => () => x.GetRequiredService<T>());
+        private readonly IServiceProvider serviceProvider;
+
+        public FormFactory(IServiceProvider serviceProvider)
+        {
+            this.serviceProvider = serviceProvider;
+        }
+
+        public T Create()
+        {
+            return ActivatorUtilities.CreateInstance<T>(this.serviceProvider);
+        }
     }
 }

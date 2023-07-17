@@ -8,13 +8,13 @@ namespace WinFormsCluuDemo;
 public partial class MainForm : Form
 {
     private readonly ICluuBackboneProvider cluuBackboneProvider;
-    private readonly FormFactory<LoginForm> loginFormFactory;
+    private readonly IFormFactory<LoginForm> loginFormFactory;
     private readonly IQueryPersonService queryPersonService;
     private readonly IWinFormsMiddleware winFormsMiddleware;
 
     public MainForm(
         ICluuBackboneProvider cluuBackboneProvider,
-        FormFactory<LoginForm> loginFormFactory,
+        IFormFactory<LoginForm> loginFormFactory,
         IWinFormsMiddleware winFormsMiddleware,
         IQueryPersonService queryPersonService
     )
@@ -29,7 +29,7 @@ public partial class MainForm : Form
 
     private void HandleLoginButtonClick(object sender, EventArgs e)
     {
-        var loginForm = this.loginFormFactory();
+        var loginForm = this.loginFormFactory.Create();
 
         var result = loginForm.ShowDialog(this);
 

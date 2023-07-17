@@ -29,9 +29,9 @@ internal static class Program
             Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
             Application.ThreadException += HandleApplicationThreadException;
 
-            var form = host.Services.GetRequiredService<MainForm>();
+            var formFactory = host.Services.GetRequiredService<IFormFactory<MainForm>>();
 
-            Application.Run(form);
+            Application.Run(formFactory.Create());
         }
         finally
         {
