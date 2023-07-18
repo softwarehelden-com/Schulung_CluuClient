@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Cluu;
 using Cluu.Hosting;
+using Cluu.Security;
 using SampleSolutionWpf.Identity;
 using SampleSolutionWpf.Login;
 using SampleSolutionWpf.Services;
@@ -41,26 +42,20 @@ internal class CluuWpfMiddleware : ICluuWpfMiddleware
                 }
             }
             catch (Exception exception)
+                when (exception is AuthenticationFailedException
+                   || exception.GetType().FullName == "Cluu.Security.NotAuthenticatedException")
             {
-                // Schweinehack weil Exception noch internal ist.
-                if (string.Equals(exception.GetType().FullName, "Cluu.Security.AuthenticationFailedException"))
-                {
-                    // Maybe token is expired. Refresh login and try again
-                    identity = await this.RefreshIdentityAsync(cancellationToken).ConfigureAwait(false);
+                // Maybe token is expired. Refresh login and try again
+                identity = await this.RefreshIdentityAsync(cancellationToken).ConfigureAwait(false);
 
-                    if (identity == null)
-                    {
-                        throw;
-                    }
-
-                    using (this.cluuIdentityAccessor.Impersonate(identity))
-                    {
-                        await requestDelegate(cancellationToken).ConfigureAwait(false);
-                    }
-                }
-                else
+                if (identity == null)
                 {
                     throw;
+                }
+
+                using (this.cluuIdentityAccessor.Impersonate(identity))
+                {
+                    await requestDelegate(cancellationToken).ConfigureAwait(false);
                 }
             }
         }
