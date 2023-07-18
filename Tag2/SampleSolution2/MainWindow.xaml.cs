@@ -11,11 +11,11 @@ namespace SampleSolutionWpf;
 public partial class MainWindow : Window
 {
     private readonly ICluuWpfMiddleware cluuWpfMiddleware;
-    private readonly WindowFactory<CluuLoginWindow> loginWindowFactory;
+    private readonly IWindowFactory<CluuLoginWindow> loginWindowFactory;
     private readonly IQueryService queryService;
 
     public MainWindow(
-        WindowFactory<CluuLoginWindow> loginWindowFactory,
+        IWindowFactory<CluuLoginWindow> loginWindowFactory,
         IQueryService queryService,
         ICluuWpfMiddleware cluuWpfMiddleware
     )
@@ -30,7 +30,7 @@ public partial class MainWindow : Window
 
     private void HandleLoginClicked(object sender, RoutedEventArgs e)
     {
-        _ = this.loginWindowFactory().ShowDialog();
+        _ = this.loginWindowFactory.Create().ShowDialog();
     }
 
     private async void HandleQueryClickedAsync(object sender, RoutedEventArgs e)

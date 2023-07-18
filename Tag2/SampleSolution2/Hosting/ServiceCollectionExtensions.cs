@@ -1,6 +1,7 @@
-﻿using System.Windows;
+﻿using Cluu.Client;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Hosting;
 using SampleSolutionWpf.Identity;
 using SampleSolutionWpf.Login;
 using SampleSolutionWpf.Middleware;
@@ -10,9 +11,19 @@ namespace SampleSolutionWpf.Hosting;
 
 internal static class ServiceCollectionExtensions
 {
+    public static IServiceCollection AddAllCluuServices(this IServiceCollection services, HostBuilderContext context)
+    {
+        return services
+            .Configure<CluuClientOptions>(context.Configuration.GetSection("cluu:client"))
+            .AddCluuClient(builder =>
+            {
+            });
+    }
+
     public static IServiceCollection AddAllServices(this IServiceCollection services)
     {
-        return services.AddCluuWpfMiddleware()
+        return services
+            .AddCluuWpfMiddleware()
             .AddQueryService()
             .AddCluuLogin()
             .AddAllWindows();
@@ -20,14 +31,13 @@ internal static class ServiceCollectionExtensions
 
     public static IServiceCollection AddAllWindows(this IServiceCollection services)
     {
-        return services.AddWindow<MainWindow>();
+        return services.AddSingleton(typeof(IWindowFactory<>), typeof(WindowFactory<>));
     }
 
     public static IServiceCollection AddCluuLogin(this IServiceCollection services)
     {
         services.TryAddSingleton<ICluuSecurityLoginService, CluuSecurityLoginService>();
         services.TryAddSingleton<IWindowsDomainLoginService, WindowsDomainLoginService>();
-        _ = services.AddWindow<CluuLoginWindow>();
         services.TryAddSingleton<IWpfCluuIdentityProvider, WpfCluuIdentityProvider>();
 
         return services;
@@ -43,14 +53,6 @@ internal static class ServiceCollectionExtensions
     public static IServiceCollection AddQueryService(this IServiceCollection services)
     {
         services.TryAddSingleton<IQueryService, QueryService>();
-
-        return services;
-    }
-
-    public static IServiceCollection AddWindow<T>(this IServiceCollection services) where T : Window
-    {
-        _ = services.AddTransient<T>()
-            .AddSingleton<WindowFactory<T>>(x => () => x.GetRequiredService<T>());
 
         return services;
     }

@@ -5,20 +5,21 @@ using Cluu;
 using Cluu.Hosting;
 using SampleSolutionWpf.Identity;
 using SampleSolutionWpf.Login;
+using SampleSolutionWpf.Services;
 
 namespace SampleSolutionWpf.Middleware;
 
 internal class CluuWpfMiddleware : ICluuWpfMiddleware
 {
     private readonly ICluuIdentityAccessor cluuIdentityAccessor;
-    private readonly WindowFactory<CluuLoginWindow> loginWindowFactory;
+    private readonly IWindowFactory<CluuLoginWindow> loginWindowFactory;
     private readonly IServiceProvider serviceProvider;
     private readonly IWpfCluuIdentityProvider wpfCluuIdentityProvider;
 
     public CluuWpfMiddleware(IServiceProvider serviceProvider,
         ICluuIdentityAccessor cluuIdentityAccessor,
         IWpfCluuIdentityProvider wpfCluuIdentityProvider,
-        WindowFactory<CluuLoginWindow> loginWindowFactory)
+        IWindowFactory<CluuLoginWindow> loginWindowFactory)
     {
         this.serviceProvider = serviceProvider;
         this.cluuIdentityAccessor = cluuIdentityAccessor;
@@ -124,7 +125,7 @@ internal class CluuWpfMiddleware : ICluuWpfMiddleware
     {
         ICluuIdentity identity = null;
 
-        var loginWindow = this.loginWindowFactory();
+        var loginWindow = this.loginWindowFactory.Create();
 
         if (loginWindow.ShowDialog() == true)
         {
