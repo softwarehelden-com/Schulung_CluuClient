@@ -50,6 +50,8 @@ internal static class Program
         catch (Exception exception)
         {
             logger.Fatal(exception, "Failed to execute the command");
+
+            throw;
         }
     }
 }
