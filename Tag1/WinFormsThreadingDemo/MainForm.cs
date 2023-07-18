@@ -19,7 +19,11 @@ public partial class MainForm : Form
         {
             if (double.TryParse(this.valueTextBox.Text, out double number))
             {
-                double sqrt = await this.calcService.SqrtAsync(number); //.ConfigureAwait(false);
+                // Workaround
+                //double sqrt = await Task.Run(async () =>
+                //    await this.calcService.SqrtAsync(number).ConfigureAwait(false)
+                //);
+                double sqrt = await this.calcService.SqrtAsync(number).ConfigureAwait(false);
 
                 this.valueTextBox.Text = sqrt.ToString();
             }
